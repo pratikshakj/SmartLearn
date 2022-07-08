@@ -1,0 +1,47 @@
+{%load static%}
+<html>
+    <style>
+        .bgimg {
+     background-image: url("https://techeconomy.ng/wp-content/uploads/2019/01/Cloud-ERP-and-Enterprise-resource-2018.jpg");;
+     height: 100%;
+     background-position: center;
+     background-size: cover;
+     position: relative;
+     color: white;
+     font-family: "Courier New", Courier, monospace;
+     }
+    </style>
+    <head>
+        <title>quiz</title>
+    </head>
+    <div class="bgimg">
+        
+    <link rel="shortcut icon" href="icon/icon.png" type="image/png">
+    <link rel="stylesheet" href="{%static 'quiz/CSS/index.css'%}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <body>
+        <button class="start-bt" onclick="location.href='{%url 'start'%}';">HOME</button>
+        <br/><br/><br/>
+        <div class="qpp">
+            <div style="font-size:20pt;">Quiz</div>
+             <div class="ques" id="question"> 
+             </div>
+             <div><input type="radio" id="opt1" name="options">
+                <span id="optt1"></span>
+            </div>
+            <div><input type="radio" id="opt2" name="options">
+                <span id="optt2"></span>
+            </div>
+            <div><input type="radio" id="opt3" name="options">
+                <span id="optt3"></span>
+            </div>
+            <div class="lftCss">
+            <button class="nxtBtn" onclick="checkAnswer()">next</button>
+            </div>
+        </div>
+    </div>
+        <script src="{%static 'quiz/js/data2.js'%}"></script>
+        <script src="{%static 'quiz/js/index2.js'%}"></script>
+    </body>
+</html>

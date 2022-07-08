@@ -1,0 +1,33 @@
+{%load static%}
+
+<link rel = "icon" href =  
+"{%static 'image/tbar.png'%}"
+        type = "image/x-icon">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<style>
+    #toast-container{display:block;position:fixed;z-index:4000}
+	#toast-container{min-width:100%;bottom:0%}
+	#toast-container{left:75%;bottom:4%;max-width:90%}
+	#toast-container{top:3%;right:7%;max-width:25%}
+	.toast{border-radius:25px;top:25px;width:auto;margin-top:10px;position:relative;max-width:20%;height:auto;min-height:48px;line-height:1.5em;background-color:#323232;padding:10px 25px;font-size:1.1rem;font-weight:300;color:#fff;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;cursor:default; border-radius: 25px;}
+	.toast .toast-action{color:#eeff41;font-weight:500;margin-right:-25px;margin-left:3rem}
+	.toast .rounded{border-radius:44px;}@media only screen and (max-width: 600px){.toast{width:60%;border-radius:0}}
+</style>
+{%if messages%}
+	{%for message in messages%}
+	<script>M.toast({html: '{{message}}', classes: 'blue' ,displayLength:2000});</script>
+	{%endfor%}
+	{%endif%}
+<div class="banner-area">
+	<div class="navbar">
+		{%if request.user == userclass.is_admin%}
+		<a href="{{back}}/admin" class="topleft">BACK</a>
+		{%else%}
+		<a href="{{back}}" class="topleft">BACK</a>
+		{%endif%}
+		<ul class="nav">
+			<li><a href="{%url 'home'%}">HOME</a></li>
+			<li><a href="/classroom/{{classID}}/attendance">ATTENDENCE</a></li>
+			<li><a href="/classroom/{{classID}}/people">PEOPLE</a></li>
+		</ul>
+	</div>

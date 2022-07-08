@@ -1,0 +1,193 @@
+{%load crispy_forms_tags%}
+
+{%load crispy_forms_filters%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>attendance</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        body, html{
+	margin:0;
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	background: #000080;
+}
+.navbar{
+	position:fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	background: white;
+	width: 100%;
+	height: 60px;
+	z-index:1;
+	font-weight: bold;
+	font-size:20px;
+	border-radius: 30px;
+	top: 25px;
+}
+.nav{
+	display: flex;
+	justify-content: right;
+	list-style: none;
+	margin-right:2%;
+}
+
+.topleft{
+	flex: 1 1 auto;
+	margin-left: 3%;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+a{
+	margin: 15px;
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+a: hover{
+	color: #000;
+}
+.texto {
+    position: absolute;
+    top: 18%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+  }
+.middle {
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    border-radius: 10px;
+    background: white;
+    position: absolute;
+    left: 45px;
+    right: 25px;
+    top: 150px;
+    height: auto;
+    width: 1450px;
+	padding-bottom: 20px;
+  }
+  .collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 90%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  position: relative;
+}
+
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  width: 90%;
+  left: 5%;
+  position: relative;
+  text-align: left;
+}
+.button1{
+	background-color:  #000080;
+	border: none;
+	color: white;
+	height: 55px;
+	width: 150px;
+	border-radius: 20px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 14px;
+	margin-top: 20px;
+	top: 5%;
+	left: 40%;
+	outline: 0 !important;
+	position: relative;
+}
+    </style>
+</head>
+<body>
+	{% include 'classnav.html'%}
+	<div class="texto">ATTENDANCE </div>
+    <div class="middle">
+		{%if request.user == userclass.is_admin%}
+		<div class="dropdown">
+			<button type="button" class="button1 dropdown"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span style="font-size: 20px;">+</span> Create Attendance</button>
+			<div class="dropdown-menu">
+				<form class="px-4 py-3" method="POST">
+					{%csrf_token%}
+				  <div class="form-group">
+					  <label for="attend">ATTENDANCE TIME:</label>
+					<input type="datetime-local" id="attend" name="attendance_time">
+				  </div>
+				  <button type="submit" class="btn btn-primary">SUBMIT</button>
+				</form>
+				<div class="dropdown-divider"></div>
+				<div style="margin: 10px;"><span style="color: red;">NOTE:</span> Attendance Form will be Automatically closed after 5 minutes!! <br> Students have to fill the Attendance Before Time</div>
+			  </div>
+		  </div>
+		  {%endif%}
+		<br> <br>
+		{%for attendance in attendances%}
+		<br>
+		{%if not attendance.is_empty%}
+		<button type="button" class="collapsible" disabled>{{attendance.attendance_time}} <span style="position: relative; left: 75%;">Attendance Not Taken!!</span> </button>
+		{%else%}
+		<button type="button" class="collapsible" >{{attendance.attendance_time}}</button>
+		{%endif%}
+        <div class="content">
+			<h6 class="display-6" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: green;">ATTENDEES</h6>
+			<hr>
+		{%for attendee in attendance.attendees.all%}
+		<p>{{attendee}}</p>
+		{%endfor%}
+		<h6 class="display-6" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: red;">ABSENTEES</h6>
+		<hr>
+		{%for absentee in attendance.absentees%}
+		{%if absentee.user != userclass.is_admin%}
+		<p>{{absentee}}</p>
+		{%endif%}
+		{%endfor%}
+	</div>
+	<br>
+	{%empty%}
+	
+		<p>NO ATTENDANCE DATA FOUND</p>
+	{%endfor%}
+	
+	<script>
+		var coll = document.getElementsByClassName("collapsible");
+        var i;
+		for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+               content.style.display = "none";}
+		 else {
+      content.style.display = "block";
+          }
+       });
+       }
+	</script>
+</body>
+</html>

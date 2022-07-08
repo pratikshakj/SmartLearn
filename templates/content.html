@@ -1,0 +1,25 @@
+{% extends 'navbar.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row" style="margin: auto;">
+        {%for users in class%}
+        <div class="col-md-3">
+
+        <div class="card" style="margin-bottom: 50px; border-radius: 20px;">
+        <img src="{{user.image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">{{users.class_name}}</h5>
+        <p class="card-text">{{users.class_sec}}</p>
+        <a href="http://127.0.0.1:8000/accounts/login" class="btn btn-primary">Go somewhere</a>
+        </div>
+        </div>
+        </div>
+        {%endfor%}
+    </div>
+    <iframe src="https://trinket.io/embed/python3/688ed429e1" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+     <button type="button" class="btn btn-secondary btn-lg" onclick="window.location.href='{%url 'logout'%}'">LOGOUT</button>
+</div>
+{% endblock %}

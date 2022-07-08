@@ -1,0 +1,100 @@
+  {%load static%}
+  <!DOCTYPE html>
+<html>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bgimg {
+  background-image: url("https://f2z5y7q2.rocketcdn.me/quizzes/wp-content/uploads/2017/11/psychological-quizzes.jpg");;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+}
+
+.topleft {
+  position: absolute;
+  top: -10px;
+  left: 16px;
+}
+
+.topright{
+  position: absolute;
+  top: 10px;
+  left: 80%;
+}
+
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 90%;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+}
+
+.start-btn{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 23px;
+  margin: 4px 2px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+hr {
+  margin: auto;
+  width: 50%;
+}
+
+.navlink{
+  text-decoration: none;
+  margin-left: 10px;
+  color: white;
+}
+</style>
+<link rel="stylesheet" href="{%static 'quiz/CSS/index.css'%}">
+<body>
+
+<div class="bgimg">
+  <button class="start-bt" onclick="location.href='{%url 'home'%}';">HOME</button>
+  <div class="middle">
+    <h1>START YOUR QUIZ HERE</h1>
+    <hr>
+    <br>
+    <button class="start-btn"><a href="{%url 'index'%}" style="text-decoration: none;">AutoCad</a></button>
+    <br>
+    <br>
+    <button class="start-btn"><a href="{%url 'index1'%}" style="text-decoration: none;">MATLAB</a></button>
+    <br>
+    <br>
+    <button class="start-btn"><a href="{%url 'index2'%}" style="text-decoration: none;">Cloud Computing</a></button>
+    <br>
+    <br>
+    <button class="start-btn"><a href="{%url 'index3'%}" style="text-decoration: none;">Cyber Security</a></button>
+    <br>
+    <br>
+    <button class="start-btn"><a href="{%url 'index4'%}" style="text-decoration: none;">PCB designing</a></button>
+    <br>
+    <br>
+    <button class="start-btn"><a href="{%url 'index5'%}" style="text-decoration: none;">Python</a></button>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+{% extends 'navbar.html' %}
+
+{%load crispy_forms_tags %}
+
+{% load crispy_forms_filters %}
+{%load static%}
+{%block content%}
+<style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto');
+*{
+margin:0;
+paddling:0;
+user-select:none;
+}
+
+body{
+background: #ffcccc;
+font-family: 'Roboto' , sans-serif;
+}
+
+.container{
+     width: 450px;
+     margin:70px auto;
+     
+}
+
+.signup,
+.login{
+width:100%;
+background: #fff;
+height:60px;
+float:left;
+text-align: center;
+line-height: 80px;
+cursor:pointer;
+text-transform: uppercase;
+}
+
+.signup-form{
+      background: #fff;
+      box-sizing: border-box;
+      padding:10px;
+      clear:both;
+      width:100%;
+      height:580px;
+}
+
+.input{
+width:100%;
+box-sizing: border-box;
+padding: 20px;
+margin-bottom: 25px;
+border: 2px solid #e9eaea;
+color: #3e3e40;
+font-size: 14px;
+outline: none;
+transition: all 0.5s ease;
+}
+
+.input:focus{
+border: 2px solid #34b3a0;
+}
+
+.butn{
+width: 100%;
+background: #34b3a0;
+height:60px;
+text-align:center;
+line-height: 60px;
+text-transform: uppercase;
+color: #fff;
+font-weight: bold;
+letter-spacing: 1px;
+cursor:pointer;
+margin-bottom: 30px;
+}
+
+span a{
+ text-decoration: none;
+ color: #000;
+}
+
+</style>
+  <div class="container">
+       <div class="signup">signup</div>
+       <div class="signup-form">
+       <form method="POST">
+            {%csrf_token%}
+          {{form|crispy}}
+       <input type="submit" class="butn" value="Create account">
+      </form>
+      </div>
+  </div>
+  {%endblock%}

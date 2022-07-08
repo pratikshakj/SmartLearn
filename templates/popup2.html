@@ -1,0 +1,62 @@
+{%load static%}
+
+<style>
+    .popup2{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.7);
+  position: absolute;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.ok1{
+  height: 35px;
+  width: 75px;
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin: 20px 0px 0px;
+}
+.contents{
+  height: 400px;
+  width: 400px;
+  background-color:white;
+  border-radius: 4px;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+</style>
+
+<div class="popup2">
+      <div class="contents">
+          <img src="{% static 'image\class.png' %}" alt="" height="70px" width="70px">
+          <div style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          font-size: 20px;margin: 10px auto;">
+
+          </div>
+          <form method = "POST" action="{% url 'join'%}">
+            {%csrf_token%}
+            <label for="clid">CLASS CODE:</label>
+            <input type="text" id="clid"name="classid" placeholder="Class code to Join">
+          <input type="submit" name="" id="" value="SUBMIT">
+          </form>
+
+
+          <button id="submit" class="ok1" onclick="stop()">CLOSE</button>
+
+      </div>
+  </div>
+  <script>
+      function popup()
+{
+  document.querySelector('.popup2').style.display='flex';
+}
+function stop()
+{
+  document.querySelector('.popup2').style.display='none';
+}
+  </script>

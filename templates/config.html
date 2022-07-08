@@ -1,0 +1,30 @@
+{%extends 'navbar.html'%}
+
+{%block content%}
+<style>
+    .box{
+        background: white;
+        height: 300px;
+        width: 500px;
+        position: relative;
+        top: 200px;
+        margin: auto;
+        border-radius: 10px;
+    
+    }
+</style>
+<div class="box">
+<div class="inside" style="text-align: center;">
+    <div class="display-4" style="width: 90%; font-size: 50px;">Confirm class Code!!</div>
+<form action="" method="POST">
+    {%csrf_token%}
+    <input type="text" id="ver" name="vercode" placeholder="classcode" style="position: relative; top:50px; left: 45px; height: 40px; width:50%; margin:auto;">
+    <button class="button btn-primary" style="position:relative; top:90px; right: 40px; margin:auto;">SUBMIT</button>
+    
+</form>
+</div>
+<div style="position: relative; top: 130px; left: 5px;">
+    <p><span style="color: red; text-align: left;">Note:</span> Email containing classcode has been sent to your mail! If not recieved within 24hrs contact us</p>
+</div>
+</div>
+{%endblock%}

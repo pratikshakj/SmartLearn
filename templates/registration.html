@@ -1,0 +1,64 @@
+{% extends 'navbar.html' %}
+
+{%load static%}
+
+{%load crispy_forms_tags %}
+
+{% load crispy_forms_filters %}
+
+{%block content%}
+<style>
+	.container{
+     width: 500px;
+     margin:70px auto;
+	 background-color: white;
+}
+
+.register{
+width:100%;
+background: #fff;
+height:60px;
+float:left;
+text-align: center;
+line-height: 80px;
+cursor:pointer;
+}
+.register-form{
+      background: #fff;
+      box-sizing: border-box;
+      padding:10px;
+      clear:both;
+      width:100%;
+      height:630px;
+}
+.btn{
+width: 100%;
+background: #34b3a0;
+height:60px;
+text-align:center;
+line-height: 60px;
+text-transform: uppercase;
+color: #fff;
+font-weight: bold;
+letter-spacing: 1px;
+cursor:pointer;
+margin-bottom: 30px;
+border-radius: 15px;
+}
+
+
+</style>
+	<div class="container">
+		<div class="register"><div class="display-2" style="font-size: 30px;font-weight: 400; padding-top: 10px;">Complete registeration !</div></div>
+		<div class="register-form">
+			<form method="POST" enctype="multipart/form-data">
+				{%csrf_token%}
+				{{form1|crispy}}
+				<label for="disuid">Uid</label>
+				<input class="form-control" id="disuid" type="text" value="{{uid}}" disabled>
+				{{form2|crispy}}
+				<input type="submit" class="btn" value="SUBMIT">
+			</form>
+		</div>
+	</div>
+{%endblock%}

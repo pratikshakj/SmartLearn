@@ -1,0 +1,349 @@
+{% load static%}
+<!DOCTYPE html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<style>
+body, html{
+	margin:0;
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	background: #000080;
+}
+
+.navbar{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	background: white;
+	width: 100%;
+	height: 60px;
+	z-index:1;
+	font-weight: bold;
+	font-size:20px;
+	border-radius: 30px;
+	top: 25px;
+}
+.nav{
+	display: flex;
+	justify-content: right;
+	list-style: none;
+	margin-right:2%;
+}
+
+.topleft{
+	flex: 1 1 auto;
+	margin-left: 3%;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+a{
+	margin: 15px;
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+a: hover{
+	color: #000;
+}
+.button1{
+	background-color:  #000080;
+	border: none;
+	color: white;
+	height: 55px;
+	width: 150px;
+	border-radius: 20px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 14px;
+	margin-top: 20px;
+	bottom: 10%;
+	left: 42%;
+	outline: 0 !important;
+	position: relative;
+}
+.middle {
+  font-size: 24px;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-radius: 10px;
+  background: white;
+  position: absolute;
+  left: 45px;
+  right: 25px;
+  top: 110px;
+  height: 400px;
+  width: 1450px;
+}
+
+.middle1 {
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-radius: 10px;
+  background: #7ae5f5;
+  position: absolute;
+  left: 45px;
+  right: 25px;
+  top: 550px;
+  height: 200px;
+  width: 200px;
+}
+.box{
+	height: 60px;
+	width: 180px;
+	left:10px;
+	top: 80px;
+	border-radius: 10px;
+	background:white;
+	position: absolute;
+}
+.box1{
+	height: auto;
+	width: 1200px;
+	left:300px;
+	top: 550px;
+	border-radius: 10px;
+	background: white;
+	position: absolute;
+	
+}
+.collapsible {
+  background-color:white;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  
+  border-radius: 10px;
+  text-align: center;
+  outline: none !important;
+  font-size: 15px;
+  position: relative;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: white;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+}
+.collapsible1 {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 90%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  position: relative;
+  left: 5%;
+  border: none;
+  text-align: left;
+  outline: none !important;
+  font-size: 15px;
+}
+.active1, .collapsible1:hover {
+  background-color: #ccc;
+}
+
+.content1 {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  position: relative;
+  height: 300px;
+  width: 90%;
+  left: 5%;
+}
+.img{
+	width: 100%;
+	height: 300px;
+	border-radius: 10px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+.inside{
+	height: auto;
+	width: 80%;
+	background: white;
+	border: 0.5px solid rgb(168, 168, 168);
+	margin: auto;
+	top: 20px;
+	position: relative;
+	border-radius: 9px;
+}
+input:hover::-webkit-input-placeholder {
+    color: #000080;
+}
+textarea:hover::-webkit-input-placeholder {
+    color: #000080;
+}
+.buut {
+  transition-duration: 0.4s;
+}
+
+.buut:hover {
+  background-color: #000080 !important; 
+  color: white;
+}
+.common{
+	position: relative;
+	left: 60px;
+	top: 0px;
+}
+.card:hover{
+	background-color: #d2d2ff;
+}
+.link{
+	position: relative;
+	font-size: 16px;
+	bottom: 20%;
+	text-align: left;
+}
+</style>
+
+<body>
+ {% include 'classnav.html'%}
+ 
+		<div class="middle">
+			<img src="{%static 'image/classroom3.jpg'%}" alt="" class="img">			
+			<button type="button" class="collapsible dropdown-toggle"></button>
+			<div class="content">
+				{%if timetables%}
+				<table class="table">
+					<thead>
+					  <tr>
+						<th scope="col">#</th>
+						{%for day in week%}
+						<th scope="col">{{day}}</th>
+						{%endfor%}
+					  </tr>
+					</thead>
+					<tbody>
+						{%for rows in timetables%}
+						{%if rows%}
+						<tr>
+							<th scope="row">{{forloop.counter}}</th>
+							{%for cell in rows%}
+							<td>{{cell}}</td>
+							{%endfor%}
+						  </tr>
+						{%endif%}
+						{%endfor%}
+					  </tbody>
+				  </table>
+				  {%endif%}
+				  <div class="link">
+					<div><span style="font-weight: bold;">SUBJECT:</span> {{classroom.class_subject}}</div>
+					<div><span style="font-weight: bold;">CLASS CODE:</span> {{classroom.classid}}</div>
+					<div><span style="font-weight: bold;">MEET LINK:</span><a href="{{classroom.c_link}}" style="text-transform:lowercase; position: relative; right: 10px;">{{classroom.c_link}}</a></div>
+				  </div>
+			</div>
+			{%if admin%}
+			<button class="button1" onclick="location.href='/classroom/{{classID}}/classconfig';">Configure Class</button>
+			{%endif%}
+			
+		</div>
+		<div class="middle1">
+			<h4>NOTIFICATIONS</h4>
+				<div class="box">
+					{%if notify%}
+				{{notify}}
+				{%endif%}
+				</div>
+			{%if class%}
+			<button class="button btn-primary" onclick="location.href='{{classroom.c_link}}';" style="position: relative; top: 120px; outline: 0 !important;">Go to Class</button>
+			{%endif%}
+		</div>
+		<div class="box1">
+			<button type="button" class="collapsible1 active1">Announce Something.....</button>
+             <div class="content1">
+				<div class="inside">
+					<form method="POST" enctype="multipart/form-data" action="/upload/{{classID}}">
+						{%csrf_token%}
+						<input type="text" placeholder="description" name="desc" class="form-control" style="width: 90%; margin: auto; margin-top: 10px; " required>
+						<div class="input-group" style="width: 90%; margin: auto; padding-top: 10px;">
+							<textarea class="form-control" placeholder="Announce Something...." name="announce" aria-label="With textarea" style="outline: none !important;" required></textarea>
+						  </div>
+						<div class="mb-3" style="width: 90%; margin: auto; padding-top: 10px;">
+							<label for="formFileSm" class="form-label">Upload Files(if any)</label>
+							<input class="form-control form-control-sm" name="upfile" id="formFileSm" type="file">
+						</div>
+						<button  type="submit" class="buut" value="submit" style="background-color: white; border:2px solid #000080; position: relative; left: 80%; margin-bottom: 10px;">SUBMIT</button>
+	
+					</form>
+				</div>
+			 </div>
+			 <br>
+			 {%if posts%}
+			 {%for post in posts%}
+			 <div class="card" style="width: 80%; margin: auto; margin-top: 20px;">
+				 <div class="card-body">
+					 <img src="{%static 'image/notes.png'%}" height="50px" width="50px" style="position: relative; top: 50px; left: 5px;" alt="">
+				   <h5 class="card-title common">{{post.description}}</h5>
+				   <h6 class="card-subtitle mb-2 text-muted common">{{post.posted_by}} || {{post.upload_date}}</h6>
+				   <p class="card-text common">{{post.post}}</p>
+				   {%if post.notes%}
+				   <a href="{{post.notes.url}}" download="" class="card-link">{{post.change}}</a>
+				   {%endif%}
+				 </div>
+			 </div>
+			 <br>
+			 {%endfor%}
+			 {%endif%}
+		</div>
+	
+{%if attendance%}
+ {% include 'attendance.html'%}
+ {%endif%}
+
+ <script>
+	var coll = document.getElementsByClassName("collapsible");
+	var i;
+	for (i = 0; i < coll.length; i++) {
+	  coll[i].addEventListener("click", function() {
+	  this.classList.toggle("active");
+	  var content = this.nextElementSibling;
+	  if (content.style.display === "block") {
+		   content.style.display = "none";
+		   
+		   document.querySelector('.middle').style.height='400px';
+		   document.querySelector('.middle1').style.top='550px';
+		   document.querySelector('.box1').style.top='550px';
+		}
+	 else {
+  content.style.display = "block";
+  document.querySelector('.middle').style.height='600px';
+  document.querySelector('.middle1').style.top='750px';
+  document.querySelector('.box1').style.top='750px';
+  
+	  }
+   });
+   }
+   var coll1 = document.getElementsByClassName("collapsible1");
+	var i;
+	for (i = 0; i < coll1.length; i++) {
+	  coll1[i].addEventListener("click", function() {
+	  this.classList.toggle("active");
+	  var content = this.nextElementSibling;
+	  if (content.style.display === "block") {
+		   content.style.display = "none";
+		   }
+	 else {
+  content.style.display = "block";
+  document.querySelector('.collapsible1').style.marginBottom ="0px";
+	  }
+   });
+   }
+</script>
+</body>
+</html>

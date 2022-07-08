@@ -1,0 +1,78 @@
+{% extends 'theme.html' %}
+
+{% load static %}
+
+{% block content %}
+  <style>
+    body, html{
+      height: 100%;
+      margin: 0;
+    }
+    
+    .image{
+      background: #ffcccc;
+      filter:blur(3px);
+      -webkit-filter: blur(3px);
+      height: 100vh;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      background-color: yellow
+    }
+    
+    .bgimg {
+      background: #ffcccc;
+      height: 100vh;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      color: black;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 25px;
+    }
+    
+    .topleft {
+      position: absolute;
+      top: 20px;
+      left: 16px;
+      font-weight: bold;
+    }
+    
+    .middle {
+      font-size: 24px;
+      text-align: center;
+      font-family; bold;
+    }
+    
+    .bottomleft {
+      position: absolute;
+      bottom: 0;
+      left: 90%;
+      color: black;
+      font-weight: bold;
+    }
+    
+    hr {
+      margin: auto;
+      width: 40%;
+    }
+    
+    .navlink{
+      text-decoration: none;
+      margin-rightt: 10px;
+      color: back;
+    }
+    </style>
+<div class="bgimg">
+  
+  <br>
+  <br>
+   <div class="middle">
+    <h2></h2>
+    <input type="text" class="form-control">
+	</div>
+	 <div class="bottomleft">
+    <p>{{class_room}}</p>
+  </div>
+</div>
+{%endblock%}

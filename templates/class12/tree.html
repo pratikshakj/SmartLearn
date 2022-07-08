@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<head>
+    <title>tree</title>
+    <style>
+        .tree,
+.tree ul,
+.tree li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.tree {
+    margin: 0 0 1em;
+    text-align: center;
+}
+
+.tree,
+.tree ul {
+    display: table;
+}
+
+.tree ul {
+    width: 100%;
+}
+
+.tree li {
+    display: table-cell;
+    padding: .5em 0;
+    vertical-align: top;
+}
+
+.tree li:before {
+    outline: solid 1px rgb(14, 12, 12);
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.tree li:first-child:before {
+    left: 50%;
+}
+
+.tree li:last-child:before {
+    right: 50%;
+}
+
+.tree code,
+.tree span {
+    border: solid .1em rgb(14, 12, 12);
+    border-radius: .2em;
+    display: inline-block;
+    margin: 0 .2em .5em;
+    padding: .2em .5em;
+    position: relative;
+}
+
+.tree ul:before,
+.tree code:before,
+.tree span:before {
+    outline: solid 1px rgb(14, 13, 13);
+    content: "";
+    height: .5em;
+    left: 50%;
+    position: absolute;
+}
+
+.tree ul:before {
+    top: -.5em;
+}
+
+.tree code:before,
+.tree span:before {
+    top: -.55em;
+}
+
+.tree>li {
+    margin-top: 0;
+}
+
+.tree>li:before,
+.tree>li:after,
+.tree>li>code:before,
+.tree>li>span:before {
+    outline: none;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 250%;
+  -ms-transform: translateY(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.start-btn{
+  background-color: #a9bd52; /* Green */
+  border: none;
+  color: rgb(12, 1, 1);
+  padding: 10px 25px;
+  text-align: center;
+  font-size: 23px;
+  margin: 2px 1px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.start-btnk{
+  background-color: #cee774; /* Green */
+  border: none;
+  color: rgb(12, 1, 1);
+  padding: 10px 25px;
+  text-align: center;
+  font-size: 23px;
+  margin: 2px 1px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.start-btnc{
+  background-color: #d8834b; /* Green */
+  border: none;
+  color: rgb(12, 1, 1);
+  padding: 10px 25px;
+  text-align: center;
+  font-size: 23px;
+  margin: 2px 1px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.start-btnr{
+  background-color: #ab71cc; /* Green */
+  border: none;
+  color: rgb(12, 1, 1);
+  padding: 10px 25px;
+  text-align: center;
+  font-size: 23px;
+  margin: 2px 1px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.start-btnp{
+  background-color: #0d6334; /* Green */
+  border: none;
+  color: rgb(245, 241, 241);
+  padding: 10px 25px;
+  text-align: center;
+  font-size: 23px;
+  margin: 2px 1px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.start-btnn{
+  background-color: #5dc2b1; /* Green */
+  border: none;
+  color: rgb(12, 1, 1);
+  padding: 10px 25px;
+  text-align: center;
+  font-size: 23px;
+  margin: 2px 1px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.start-btnnn{
+  background-color: #d6956f; /* Green */
+  border: none;
+  color: rgb(12, 1, 1);
+  padding: 10px 25px;
+  text-align: center;
+  font-size: 23px;
+  margin: 2px 1px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.start-btnnnk{
+  background-color: #56ac81; /* Green */
+  border: none;
+  color: rgb(12, 1, 1);
+  padding: 10px 25px;
+  text-align: center;
+  font-size: 23px;
+  margin: 2px 1px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+html {
+     background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyKoMKcwcuiKwzdF7XtuoaAAyvgOHhn8RQvA&usqp=CAU") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+     }
+.start-bt{
+    background-color: #e3ebea; /* Green */
+    border: none;
+    color: rgb(12, 1, 1);
+    padding: 9px 17px;
+    text-align: center;
+    font-size: 10px;
+    margin: 5px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+     }
+</style>
+
+</head>
+<body>
+    <button class="start-bt"><a href="{%url 'cghome'%}" style="text-decoration: none;">BACK</a></button>
+
+    <div class="vertical-center">
+    <ul class="tree">
+        <li> <span><button class="start-btnp">After 10th</button></span>
+          <ul>
+            <li><span><button class="start-btn"><a href="#" style="text-decoration: none;">Science</a></button></span>
+              <ul>
+                <li> <span><button class="start-btnn"><a href="#" style="text-decoration: none;"></a>Engineering</a></button></span>
+                  <ul>
+                    <li><span><button class="start-btnnn"><a href="{%url 'cse'%}" style="text-decoration: none;">Compter Science </a></button></span></li>
+                    <li><span><button class="start-btnnn"><a href="{%url 'mech'%}" style="text-decoration: none;">Mechanical engineering</a></button></span></li>
+                    <li><span><button class="start-btnnn"><a href="{%url 'eee'%}" style="text-decoration: none;">Electrical Engineering</a></button></span></li>
+                    <li><span><button class="start-btnnn"><a href="{%url 'civil'%}" style="text-decoration: none;">Civil engineering</a></button></span></li>
+                    <li><span><button class="start-btnnn"><a href="{%url 'chem'%}" style="text-decoration: none;">Chemical Engineering</a></button></span></li>
+                    <li><span><button class="start-btnnn"><a href="{%url 'ise'%}" style="text-decoration: none;">Information Science engineering</a></button></span></li>
+                    <li><span><button class="start-btnnn"><a href="{%url 'aero'%}" style="text-decoration: none;">Aeronautical & Aerospace Engineering</a></button></span></li>
+                    <li><span><button class="start-btnnn"><a href="{%url 'biotech'%}" style="text-decoration: none;">Biotechnology</a></button></span></li>
+                    <li><span><button class="start-btnnn"><a href="{%url 'enc'%}" style="text-decoration: none;">Electrical and electronics engineering</a></button></span></li>
+                    <li><span><button class="start-btnnn"><a href="{%url 'autorobot'%}" style="text-decoration: none;">Anutomations and robotics</a></button></span></li>
+                  </ul>
+                </li>
+                <li> <span><button class="start-btnn"><a href="#" style="text-decoration: none;">Medical</a></button></span>
+                  <ul>
+                    <li><span><button class="start-btnnnk"><a href="{%url 'mbbs'%}" style="text-decoration: none;">MBBS</a></button> </span></li>
+                    <li><span><button class="start-btnnnk"><a href="{%url 'bds'%}" style="text-decoration: none;">BDS</a></button></span></li>
+                    <li><span><button class="start-btnnnk"><a href="{%url 'bams'%}" style="text-decoration: none;">BAMS</a></button></span></li>
+                    <li><span><button class="start-btnnnk"><a href="{%url 'bums'%}" style="text-decoration: none;">BUMS</a></button> </span></li>
+                    <li><span><button class="start-btnnnk"><a href="{%url 'bhms'%}" style="text-decoration: none;">BHMS</a></button></span></li>
+                    <li><span><button class="start-btnnnk"><a href="{%url 'bnys'%}" style="text-decoration: none;">BYNS</a></button></span></li>
+                    <li><span><button class="start-btnnnk"><a href="{%url 'bvsc'%}" style="text-decoration: none;">B.V.Sc & AH</a></button></span></li>
+                  </ul>
+                </li>
+                <li> <span><button class="start-btnn"><a href="#" style="text-decoration: none;">B.sc</a></button></span>
+                    <ul>
+                      <li><span><button class="start-btnk"><a href="{%url 'bscIT'%}" style="text-decoration: none;">BSc IT (Information Technology)</a></button></span></li>
+                      <li><span><button class="start-btnk"><a href="{%url 'bscCS'%}" style="text-decoration: none;">BSc Computer Science</a></button></span></li>
+                      <li><span><button class="start-btnk"><a href="{%url 'bscNurse'%}" style="text-decoration: none;">BSc Nursing </a></button></span></li>
+                      <li><span><button class="start-btnk"><a href="{%url 'bscFashion'%}" style="text-decoration: none;">BSc Fashion Design</a></button></span></li>
+                      <li><span><button class="start-btnk"><a href="{%url 'bscHospital'%}" style="text-decoration: none;">BSc Hospitality </a></button></span></li>
+                      <li><span><button class="start-btnk"><a href="{%url 'bscAnime'%}" style="text-decoration: none;">BSc Animation </a></button></span></li>
+                      <li><span><button class="start-btnk"><a href="{%url 'bscBiotech'%}" style="text-decoration: none;">BSc Biotechnology </a></button> </span></li>
+                      <li><span><button class="start-btnk"><a href="{%url 'bscAgri'%}" style="text-decoration: none;">BSc Agriculture</a></button> </span></li>
+                    </ul>
+                </li>
+                <li> <span><button class="start-btnn"><a href="{%url 'bca'%}" style="text-decoration: none;">BCA</a></button></span>
+               </ul>
+            </li>
+            <li><span><button class="start-btn"><a href="#" style="text-decoration: none;">Commerce</a></button></span>
+              <ul>
+                <li> <span><button class="start-btnc"><a href="{%url 'bcom'%}" style="text-decoration: none;">B.Com.</a></button> </span>
+                <li><span><button class="start-btnc"><a href="{%url 'bba'%}" style="text-decoration: none;">B.B.A.</a></button> </span></li>
+                <li> <span><button class="start-btnc"><a href="{%url 'bms'%}" style="text-decoration: none;">B.M.S.</a></button> </span>
+                <li><span><button class="start-btnc"><a href="{%url 'ca'%}" style="text-decoration: none;">C.A.</a></button> </span></li>
+                <li><span><button class="start-btnc"><a href="{%url 'bbs'%}" style="text-decoration: none;">B.B.S.</a></button> </span></li>
+                <li><span><button class="start-btnc"><a href="{%url 'bhm'%}" style="text-decoration: none;">B.H.M</a></button> </span></li>
+              </ul>
+             </li>
+             <li><span><button class="start-btn"><a href="#" style="text-decoration: none;">Arts</a></button></span>
+              <ul>
+                <li> <span><button class="start-btnr"><a href="{%url 'ba'%}" style="text-decoration: none;">B.A.</a></button> </span>
+                <li> <span><button class="start-btnr"><a href="{%url 'bfa'%}" style="text-decoration: none;">B.F.A.</a></button> </span>
+                <li> <span><button class="start-btnr"><a href="{%url 'baLLB'%}" style="text-decoration: none;">B.A + L.L.B.</a></button> </span>
+                <li> <span><button class="start-btnr"><a href="{%url 'bjmc'%}" style="text-decoration: none;">B.J.M</a></button> </span>
+                <li> <span><button class="start-btnr"><a href="{%url 'bfd'%}" style="text-decoration: none;">B.F.D</a></button> </span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+</body>
+</html>

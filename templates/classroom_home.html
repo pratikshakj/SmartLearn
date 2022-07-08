@@ -1,0 +1,28 @@
+{% extends 'navbar.html' %}
+
+{% load static %}
+
+{%block content%}
+<div class="container">
+    <div class="row" style="margin: auto;">
+        {%for user_class in user_classes%}
+        <div class="col-md-3">
+
+        <div class="card" style="margin-bottom: 50px; border-radius: 20px;">
+        <img src="{% static 'image/classroom.jpg'%}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">{{user_class.class_name}}</h5>
+        <p class="card-text">{{user_class.class_sec}}</p>
+        {%if request.user == user_class.is_admin%}
+        <a href="{{user_class.get_abs_url}}/admin" class="btn-lg btn-primary">Go To Classroom</a>
+        {%else%}
+        <a href="{{user_class.get_abs_url}}" class="btn-lg btn-primary">Go To Classroom</a>
+        {%endif%}
+        </div>
+        </div>
+        </div>
+        {%endfor%}
+    </div>
+     <button type="button" class=" btn-secondary btn-lg" onclick="window.location.href='{%url 'logout'%}'">LOGOUT</button>
+</div>
+{%endblock%}

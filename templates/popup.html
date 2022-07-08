@@ -1,0 +1,96 @@
+{%load static%}
+
+{%load crispy_forms_tags%}
+
+{%load crispy_forms_filters%}
+<style>
+    .popup{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.7);
+  position: fixed;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+.ok1{
+  height: 35px;
+  width: 75px;
+  background-color: crimson;
+  color: white;
+  border-bottom: none !important;
+  border-radius: 4px;
+  margin: 20px 0px 0px;
+}
+.contents1{
+  height: 670px;
+  width: 600px;
+  background-color:white;
+  border-radius: 4px;
+  text-align: center;
+  top: auto;
+  padding: 20px;
+  
+}
+.buttn{
+width: 100%;
+background: #34b3a0;
+height:60px;
+text-align:center;
+line-height: 60px;
+text-transform: uppercase;
+color: #fff;
+border-radius: 20px;
+font-weight: bold;
+letter-spacing: 1px;
+cursor:pointer;
+margin-bottom: 30px;
+outline: 0 !important;
+}
+.spin{
+  position: relative;
+  top: 20px;
+  display: none;
+  text-align: center;
+}
+</style>
+
+<div class="popup">
+      <div class="contents1">
+          <img src="{% static 'image\class.png' %}" alt="" height="70px" width="70px">
+          <div style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          font-size: 20px;margin: 10px auto;">
+
+          </div>
+          <form method = "POST" action="{% url 'create'%}">
+            {%csrf_token%}
+          {{form|crispy}}
+          <input type="submit" class="buttn" onclick="disp()" name="" id="" value="SUBMIT">
+          </form>
+          <button id="submit" class="ok1" onclick="nice()">CLOSE</button>
+          <br>
+          <div class="spin">
+            <div class="spinner-border text-primary"style="position:relative; left:48%;" role="status"></div>
+            <div style="position:relative; top: 35px; left: 90px;">
+              Loading....Please Do Not Reload or Close!
+            </div>
+          </div>
+      </div>
+  </div>
+  <script>
+  function disp()
+  {
+    document.querySelector('.spin').style.display='flex';
+  }
+      function pop()
+{
+  document.querySelector('.popup').style.display='flex';
+}
+function nice()
+{
+  document.querySelector('.popup').style.display='none';
+  document.querySelector('.spin').style.display='none';
+}
+  </script>

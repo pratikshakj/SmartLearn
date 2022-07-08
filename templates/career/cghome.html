@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<style>
+	body, html{
+	height: 100%;
+  margin: 0;
+}
+.banner-area{
+	position:relative;
+	background: #000080;
+	width: 100%;
+	height:200vh;
+	background-size: cover;
+}
+.middle {
+  font-size: 24px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+.box1 {
+  left: 105px;
+  top: 225px;
+  height: 500px;
+  width: 300px;
+  background: white;
+  position: absolute;
+  border-radius: 50px;
+}
+.box2 {
+  left: 40%;
+  top: 225px;
+  height: 500px;
+  width: 300px;
+  background: white;
+  position: absolute;
+  border-radius: 30px;
+}
+.box3 {
+  right: 105px;
+  top: 225px;
+  height: 500px;
+  width: 300px;
+  background: white;
+  position: absolute;
+  border-radius: 30px;
+}
+.bottom {
+  position: absolute;
+  font-weight: bold;
+  font-size: 35px;
+}
+.navlink{
+  text-decoration: none;
+  margin-right: 10px;
+  color: white;
+  background: green;
+  border-radius: 10px;
+}
+</style>
+<body>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<div class="banner-area">
+	<button class="button btn-light" style="position: relative; top: 10px; left: 5px;" onclick="location.href='{%url 'home'%}';">BACK</button>
+	<div class="middle">
+		<br>
+		<br>
+		<br>
+		<br>
+		<prep style="font-size: 40px; color: yellow; top: 200px;">                                                                                                          CAREER GUIDANCE </prep>
+		<div class="box1">
+			<div class="bottom">
+				<br>
+				<prep>        For Class 10th Students</prep>
+				<br>
+				<br>
+				<prep>         Helping you to choose the subjects & stream</prep>
+				<br>
+				<br>
+				<br>
+				<br>
+				<a href="{%url 'career-home'%}" class="navlink"><prep "font-size: 30px;">              START</prep></a>
+			</div>
+		</div>
+		<div class="box2">
+			<div class="bottom">
+				<br>
+				<prep>         For Class 12th Students</prep>
+				<br>
+				<br>
+				<prep>         Helping you to get into your dream course</prep>
+				<br>
+				<br>
+				<br>
+				<br>
+				<a href="{%url 'class12'%}" class="navlink"><prep "font-size: 30px;">              START</prep></a>
+			</div>
+		</div>
+		<div class="box3">
+			<div class="bottom">
+				<br>
+				<prep>         For Graduate Students</prep>
+				<br>
+				<br>
+				<prep>         Create your career plan and find a way towards your dream job</prep>
+				<br>
+				<br>
+				<br>
+				<a href="{%url 'pg'%}" class="navlink"><prep "font-size: 30px;">              START</prep></a>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

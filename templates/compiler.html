@@ -1,0 +1,18 @@
+{% extends 'navbar.html' %}
+
+{% block content%}
+
+    <div style="height: 100%; width: 100%;">
+        {%if compiler == 'python'%}
+        <iframe src="https://trinket.io/embed/python3/688ed429e1" style="left: 10%; position: relative;" width="80%" height="90%" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        {%elif compiler == 'java'%}
+        <iframe src="https://trinket.io/embed/java/f236a16f40"  style="left: 10%; position: relative;" width="80%" height="90%" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe> 
+        {%elif compiler == 'html'%}
+        <iframe src="https://trinket.io/embed/html/7edd8c1b53" style="left: 10%; position: relative;" width="80%" height="90%" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        {%elif compiler == 'cpp'%}
+        <iframe style="left: 10%; position: relative;" width="80%" height="90%" src="https://www.programiz.com/cpp-programming/online-compiler/" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+        {%elif compiler == 'c-programming'%}
+        <iframe src="https://www.programiz.com/c-programming/online-compiler/" style="left: 10%; position: relative;" width="80%" height="90%" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        {%endif%}  
+    </div>
+{%endblock%}

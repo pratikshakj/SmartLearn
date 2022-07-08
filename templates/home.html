@@ -1,0 +1,108 @@
+{% extends 'navbar.html' %}
+
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Walter+Turncoat);
+body, html{
+	height: 100%;
+  margin: 0;
+
+}
+
+.image{
+
+  height: 1000px;
+  background-position: center;
+  background-size: cover;
+  background-image: url("{% static 'image\home.png' %}");
+}
+
+.bgimg {
+  width: 95%;
+  margin: auto;
+  background-color:white;
+  color: white;
+  font-family: "Walter Turncoat", cursive;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.topright{
+  position: absolute;
+  top: 10px;
+  left: 80%;
+}
+
+.bottomleft {
+  color: black;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  left: 90%;
+}
+
+.middle {
+  position: absolute;
+  top: 80%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 40px;
+  color: yellow;
+}
+
+.start-btn{
+  background-color:transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 19px;
+  cursor: pointer;
+  outline: 0 !important;
+}
+
+hr {
+  margin: auto;
+  width: 40%;
+}
+
+.navlink{
+  text-decoration: none;
+  margin-left: 10px;
+  color: black;
+}
+.contents{
+  width: 95%;
+  margin: auto;
+}
+</style>
+<body>
+<div class="bgimg">
+  <div class="image">
+  </div>
+  <div class="middle">
+    <h1 style="font-size: 50px;">ADHYAYANA</h1>
+    <hr>
+    <br>
+    {%if user.is_authenticated%}
+    <button class="start-btn" onclick="pop()">CREATE CLASSROOM</button>
+    {%else%}
+    <button class="start-btn" onclick="location.href='{%url 'login'%}';">CREATE CLASSROOM</button>
+    {%endif%}
+	<br>
+    <button class="start-btn"  onclick="location.href='{%url 'login'%}';">LOGIN</button>
+  </div>
+</div>
+<br>
+<br>
+
+{%endblock%}

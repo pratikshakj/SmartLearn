@@ -1,0 +1,101 @@
+{%extends 'navbar.html'%}
+
+{%block content%}
+<style>
+  body, html{
+	height: 100%;
+  margin: 0;
+}
+
+.image{
+  filter:blur(3px);
+  -webkit-filter: blur(3px);
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.bgimg {
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: black;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+}
+
+.topleft {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  font-weight: bold;
+}
+
+.middle {
+  font-size: 24px;
+  text-align: center;
+  font-family; bold;
+  border: black solid 2px;
+  border-radius: 50px;
+  background: white;
+  position: absolute;
+  left: 25px;
+  right: 25px;
+}
+
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 90%;
+  color: black;
+  font-weight: bold;
+}
+
+hr {
+  margin: auto;
+  width: 40%;
+}
+
+.navlink{
+  text-decoration: none;
+  margin-right: 10px;
+  color: back;
+}
+</style>
+<div class="bgimg">
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="middle">
+    <h2>About this app</h2>
+	<ul>
+    	<li>
+		    <p>It is an app which will have features of conducting online live classes with a timetable and attendance.</p>
+		</li>
+		<br>
+    	<li>
+    		<p>The faculty will have facility to post the recorded versions of their classes and notes.</p>
+    	</li>
+		<br>
+    	<li>
+    		<p>There will be additional features like quizes, online compiler and career guidance.</p>
+    	</li>
+		<br>
+		<li>
+    		<p>There is a separate section for career guidance.</p>
+      </li>
+      <br>
+      <li>
+    		<p>contact us:adhayayan.scl7maxo@gmail.com</p>
+    	</li>
+	</ul>
+</div>
+	 <div class="bottomleft">
+    <p>TEAM SUDHAKSHA</p>
+  </div>
+</div>
+{%endblock%}

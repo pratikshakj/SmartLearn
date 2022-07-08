@@ -1,0 +1,76 @@
+<script>
+    var howLong = 60000;
+    t = null;
+    function closeMe(){
+    t = setTimeout("self.nice()",howLong);
+    }
+</script>
+<body onload="closeMe();self.focus()">
+
+<TABLE align="center" width="300">
+<TR>
+   <TD align="center">
+        
+   </TD>
+</TR>
+</TABLE>
+<style>
+      .popup{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ok1{
+    height: 35px;
+    width: 75px;
+    background-color: crimson;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin: 20px 0px 0px;
+}
+.contents{
+    height: 300px;
+    width: 400px;
+    background-color:white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+</style>
+
+
+<div class="popup">
+        <div class="contents">
+          <img src="https://st4.depositphotos.com/14431644/22126/i/600/depositphotos_221269250-stock-photo-handwriting-text-attendance-concept-meaning.jpg" alt"" height="70px" width="70px">
+            <div style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;margin: 10px auto;">
+
+            </div>
+
+            <form method = "POST" action="/classroom/{{classID}}/submit">
+                {%csrf_token%}
+            <input type ="text" class="form-group" placeholder ="Your Name" style="margin: 15px;" name="class"/> <br>
+            <input type="submit" class="ok1" value="SUBMIT" onclick="nice()">
+            </form>
+            
+        </div>
+    </div>
+    <script>
+        function pop()
+{
+    document.querySelector('.popup').style.display='flex';
+}
+function nice()
+{
+    document.querySelector('.popup').style.display='none';
+}
+
+    </script>
+</body>

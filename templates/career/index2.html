@@ -1,0 +1,56 @@
+{%load static%}
+<html>
+    <style>
+        .bgimg {
+     background-image: url({%static 'image/index2.jpg'%});
+     height: 100%;
+     background-position: center;
+     background-size: cover;
+     position: relative;
+     color: white;
+     font-family: "Courier New", Courier, monospace;
+     }
+     .start-btnop{
+    background-color: #e3ebea; /* Green */
+    border: none;
+    color: rgb(12, 1, 1);
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 15px;
+    margin: 5px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+     }
+
+    </style>
+    <head>
+        <title>quiz</title>
+    </head>
+    <div class="bgimg">
+    <link rel="shortcut icon" href="icon/icon.png" type="image/png">
+    <link rel="stylesheet" href="{% static 'career/CSS/index.css'%}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <body>
+        <button class="start-btnop"><a href="{%url 'career-home'%}" style="text-decoration: none;">BACK</a></button>
+        <br/><br/><br/>
+        <div class="qPanel">
+            <div style="font-size:20pt;">Quiz</div>
+             <div class="ques" id="question"> 
+             </div>
+             <div><input type="radio" id="opt1" name="options">
+                <span id="optt1"></span>
+            </div>
+            <div><input type="radio" id="opt2" name="options">
+                <span id="optt2"></span>
+            </div>
+            <div><input type="radio" id="opt3" name="options">
+                <span id="optt3"></span>
+            </div>
+            <button class="nxtBtn" onclick="checkAnswer()">next</button>
+        </div>
+    </div>
+    <script src="{%static 'career/js/data3.js'%}"></script>
+    <script src="{%static 'career/js/index3.js'%}"></script>
+    </body>
+</html>

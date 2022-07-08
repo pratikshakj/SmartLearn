@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<style>
+body, html{
+	margin:0;
+	padding: 0;
+	font-family: 'playfair display', serif;
+}
+
+.navbar{
+	position:fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	background: white;
+	width: 100%;
+	height: 60px;
+	z-index:1;
+	font-weight: bold;
+	font-size:20px;
+	border-radius: 30px;
+	top: 25px;
+}
+.nav{
+	display: flex;
+	justify-content: right;
+	list-style: none;
+	margin-right:2%;
+}
+
+.topleft{
+	flex: 1 1 auto;
+	margin-left: 3%;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+a{
+	margin: 15px;
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+a: hover{
+	color: #000;
+}
+
+.banner-area{
+	position:relative;
+	background: #000080;
+	width: 100%;
+	height:100vh;
+	background-size: cover;
+}
+.middle {
+  font-size: 24px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  border-radius: 10px;
+  background: white;
+  position: absolute;
+  left: 45px;
+  right: 25px;
+  top: 110px;
+  height: 200px;
+  width: 1450px;
+}
+
+.middle1 {
+  font-size: 24px;
+  text-align: center;
+  font-family; bold;
+  border-radius: 10px;
+  background: #7ae5f5;
+  position: absolute;
+  left: 45px;
+  right: 25px;
+  top: 350px;
+  height: 200px;
+  width: 200px;
+}
+.box{
+	height: 30px;
+	width: 180px;
+	left:10px;
+	top: 160px;
+	border-radius: 10px;
+	background:white;
+	position: absolute;
+}
+.box1{
+	height: 385px;
+	width: 1200px;
+	left:300px;
+	top: 350px;
+	border-radius: 10px;
+	background: white;
+	position: absolute;
+}
+
+</style>
+
+<body>
+<div class="banner-area">
+	<div class="navbar">
+		<a href="#" class="topleft">BACK</a>
+		<ul class="nav">
+			<li><a href="#">HOME</a></li>
+			<li><a href="#">TIMETABLE</a></li>
+			<li><a href="#">QUIZ</a></li>
+			<li><a href="#">ATTENDENCE</a></li>
+			<li><a href="#">PEOPLE</a></li>
+		</ul>
+	</div>
+		<div class="middle"></div>
+		<div class="middle1">
+			<h3>Share the content here</h3>
+			<div class="box"></div>
+		</div>
+		<div class="box1"></div>
+</div>
+</body>
+</html>
+		

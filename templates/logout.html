@@ -1,0 +1,8 @@
+{% extends 'navbar.html' %}
+
+{% load static %}
+
+{% block content %}
+<h1 class="display-2" style="text-align: center;">You Have Logged Out!!</h1>
+<button type="button" class=" btn-secondary btn-lg" onclick="window.location.href='{%url 'login'%}'">LOGIN AGAIN</button>
+{% endblock %}
