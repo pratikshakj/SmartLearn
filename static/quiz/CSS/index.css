@@ -1,0 +1,120 @@
+body{
+    background-color: #d2d4d1 ;
+    background-image: url(../post1.jpg); 
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed;
+}
+.start-bt{
+    background-color: #e3ebea; /* Green */
+    border: none;
+    color: rgb(12, 1, 1);
+    padding: 9px 17px;
+    text-align: center;
+    font-size: 10px;
+    margin: 5px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+     }
+.qPanel{
+    margin:auto;
+    width:800px;
+    vertical-align: center;
+    margin:0 auto;
+    background-color: #42917d ;
+    border: none ;
+    border-radius : 40px ;
+    padding: 20px ;
+    height: 180px ;
+    font-size: 15pt;
+}
+.ques{
+    font-size : 18pt;
+    font-weight: bold ;
+}
+.nxtBtn{
+    position: relative ;
+    right : 10px ;
+    float: right;
+    border:none ;
+    font-size: 18pt ;
+    background-color: #edf3f3  ;
+    color: #080808 ;
+    width: 80px ;
+    height: 35px ;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.qp{
+    margin:auto;
+    width:800px;
+    vertical-align: center;
+    margin:0 auto;
+    background-color: #17757c ;
+    border: none ;
+    border-radius : 40px ;
+    padding: 20px ;
+    height: 180px ;
+    font-size: 15pt;
+}
+.qpp{
+    margin:auto;
+    width:800px;
+    vertical-align: center;
+    margin:0 auto;
+    background-color: #696c6d ;
+    border: none ;
+    border-radius : 40px ;
+    padding: 20px ;
+    height: 180px ;
+    font-size: 15pt;
+}
+.qppp{
+    margin:auto;
+    width:800px;
+    vertical-align: center;
+    margin:0 auto;
+    background-color: #1c1c1d ;
+    border: none ;
+    border-radius : 40px ;
+    padding: 20px ;
+    height: 180px ;
+    font-size: 15pt;
+}
+.qpppp{
+    margin:auto;
+    width:800px;
+    vertical-align: center;
+    margin:0 auto;
+    background-color: #389ca3 ;
+    border: none ;
+    border-radius : 40px ;
+    padding: 20px ;
+    height: 180px ;
+    font-size: 15pt;
+}
+.qppppp{
+    margin:auto;
+    width:800px;
+    vertical-align: center;
+    margin:0 auto;
+    background-color: #199953 ;
+    border: none ;
+    border-radius : 40px ;
+    padding: 20px ;
+    height: 180px ;
+    font-size: 15pt;
+}
+.hbtn{
+    position: relative;
+    top:10px;
+    left: 10px;
+    height: 50px;
+    width: 120px;
+    border-radius: 6px;
+    background-color: white;
+}
+       

@@ -1,0 +1,49 @@
+body {
+    background-image: url("img3.jpg");
+  }
+
+  h1.normal {
+    font-style: normal;
+  }
+  
+  p.italic {
+    font-style: italic;
+    
+    
+
+}
+  
+  p.oblique {
+    font-style: oblique;
+  }
+
+  h1 {
+    font-size: 50px;
+    font-style: italic;
+    color: #808080;
+    text-decoration-color: black;
+  }
+
+  h3{
+
+    color:blue;
+    font-weight: 500;
+    text-decoration: brown !important;
+    font-size:35px;
+  }
+
+  h4{
+    font-size: 50px;
+    color: rgb(206, 206, 45);
+
+  }
+
+  h2{
+      color: green;
+  }
+
+  h5{
+      color: black;
+      font-size: medium;
+      font-size: 30px;
+  }
